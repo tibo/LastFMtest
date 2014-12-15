@@ -24,7 +24,7 @@ class LFMAPIClient_Tests: XCTestCase {
     func test_artistSearch_withSearch_shouldReturnValidResult() {
         let expectation = self.expectationWithDescription("test artist.search")
         
-        LFMAPIClient.searchArtist("Salut c'est Cool", callback: { (artists, error) -> Void in
+        LFMAPIClient.searchArtist("Salut C'est Cool", callback: { (artists, error) -> Void in
             expectation.fulfill()
         })
         

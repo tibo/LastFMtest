@@ -25,9 +25,19 @@ class LFMAPIClient: NSObject {
         params["api_key"] = api_key
         params["format"] = "json"
         
-        if let url = NSURL.URLWithBaseURL(baseURL, method: method, params: params)?
+        var url: NSURL?
+        
+        #if TESTING
+            url = NSURL.testURLForMethod(method, params: params)
+        #else
+            url = NSURL.URLWithBaseURL(baseURL, method: method, params: params)
+        #endif
+
+        if let u = url?
         {
-            let request = NSURLRequest(URL: url)
+            NSLog("Loading URL \(u)")
+            
+            let request = NSURLRequest(URL: u)
             
             NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: { (response, data, error) -> Void in
                 

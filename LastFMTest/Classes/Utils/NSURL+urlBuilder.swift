@@ -24,5 +24,19 @@ extension NSURL {
         
         return NSURL(string: url_string)
     }
-
+    
+    class func testURLForMethod(method: String!, params: [String: String]!) -> NSURL? {
+        #if TESTING
+            var filename = "artist.search-SalutCestCool.json"
+            
+            if let path = NSBundle.mainBundle().pathForResource(filename, ofType: nil, inDirectory: nil)
+            {
+                return NSURL(fileURLWithPath: path)
+            }
+            
+            return nil
+        #else
+            return nil
+        #endif
+    }
 }

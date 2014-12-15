@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		112AB0AF1A3C8A9E00F0C362 /* NSURL+urlBuilder_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112AB0AE1A3C8A9E00F0C362 /* NSURL+urlBuilder_Tests.swift */; };
 		112AB0B01A3C8AA300F0C362 /* NSURL+urlBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A4C5111A3C80EA00E9EAB2 /* NSURL+urlBuilder.swift */; };
+		112AB0CB1A3EFB3D00F0C362 /* artist.search-SalutCestCool.json in Resources */ = {isa = PBXBuildFile; fileRef = 112AB0C91A3EFB3D00F0C362 /* artist.search-SalutCestCool.json */; };
+		112AB0CD1A3EFB5500F0C362 /* artist.search-SalutCestCool.json in Resources */ = {isa = PBXBuildFile; fileRef = 112AB0C91A3EFB3D00F0C362 /* artist.search-SalutCestCool.json */; };
 		11A4C4D41A3C666100E9EAB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A4C4D31A3C666100E9EAB2 /* AppDelegate.swift */; };
 		11A4C4D61A3C666100E9EAB2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A4C4D51A3C666100E9EAB2 /* ViewController.swift */; };
 		11A4C4D91A3C666100E9EAB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A4C4D71A3C666100E9EAB2 /* Main.storyboard */; };
@@ -32,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		112AB0AE1A3C8A9E00F0C362 /* NSURL+urlBuilder_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+urlBuilder_Tests.swift"; sourceTree = "<group>"; };
+		112AB0C91A3EFB3D00F0C362 /* artist.search-SalutCestCool.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "artist.search-SalutCestCool.json"; sourceTree = "<group>"; };
 		11A4C4CE1A3C666100E9EAB2 /* LastFMTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LastFMTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11A4C4D21A3C666100E9EAB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11A4C4D31A3C666100E9EAB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +75,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		112AB0C81A3EFB3D00F0C362 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				112AB0C91A3EFB3D00F0C362 /* artist.search-SalutCestCool.json */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		11A4C4C51A3C666000E9EAB2 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +104,7 @@
 		11A4C4D01A3C666100E9EAB2 /* LastFMTest */ = {
 			isa = PBXGroup;
 			children = (
+				112AB0C81A3EFB3D00F0C362 /* Mocks */,
 				11A4C4F31A3C683200E9EAB2 /* Classes */,
 				11A4C4D31A3C666100E9EAB2 /* AppDelegate.swift */,
 				11A4C4D51A3C666100E9EAB2 /* ViewController.swift */,
@@ -253,6 +265,7 @@
 			files = (
 				11A4C4D91A3C666100E9EAB2 /* Main.storyboard in Resources */,
 				11A4C4DE1A3C666100E9EAB2 /* LaunchScreen.xib in Resources */,
+				112AB0CB1A3EFB3D00F0C362 /* artist.search-SalutCestCool.json in Resources */,
 				11A4C4DB1A3C666100E9EAB2 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				112AB0CD1A3EFB5500F0C362 /* artist.search-SalutCestCool.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
