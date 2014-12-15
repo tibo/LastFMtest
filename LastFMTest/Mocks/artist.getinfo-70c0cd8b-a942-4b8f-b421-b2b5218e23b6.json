@@ -1,0 +1,205 @@
+{
+    "artist": {
+        "name": "Salut C'est Cool",
+        "mbid": "70c0cd8b-a942-4b8f-b421-b2b5218e23b6",
+        "url": "http://www.last.fm/music/Salut+C%27est+Cool",
+        "image": [
+                  {
+                  "#text": "http://userserve-ak.last.fm/serve/34/95960219.jpg",
+                  "size": "small"
+                  },
+                  {
+                  "#text": "http://userserve-ak.last.fm/serve/64/95960219.jpg",
+                  "size": "medium"
+                  },
+                  {
+                  "#text": "http://userserve-ak.last.fm/serve/126/95960219.jpg",
+                  "size": "large"
+                  },
+                  {
+                  "#text": "http://userserve-ak.last.fm/serve/252/95960219.jpg",
+                  "size": "extralarge"
+                  },
+                  {
+                  "#text": "http://userserve-ak.last.fm/serve/500/95960219/Salut+Cest+Cool+salut.jpg",
+                  "size": "mega"
+                  }
+                  ],
+        "streamable": "0",
+        "ontour": "1",
+        "stats": {
+            "listeners": "781",
+            "playcount": "28374"
+        },
+        "similar": {
+            "artist": [
+                       {
+                       "name": "Club Cheval",
+                       "url": "http://www.last.fm/music/Club+Cheval",
+                       "image": [
+                                 {
+                                 "#text": "http://userserve-ak.last.fm/serve/34/78651966.jpg",
+                                 "size": "small"
+                                 },
+                                 {
+                                 "#text": "http://userserve-ak.last.fm/serve/64/78651966.jpg",
+                                 "size": "medium"
+                                 },
+                                 {
+                                 "#text": "http://userserve-ak.last.fm/serve/126/78651966.jpg",
+                                 "size": "large"
+                                 },
+                                 {
+                                 "#text": "http://userserve-ak.last.fm/serve/252/78651966.jpg",
+                                 "size": "extralarge"
+                                 },
+                                 {
+                                 "#text": "http://userserve-ak.last.fm/serve/500/78651966/Club+Cheval+clubcheval_color.jpg",
+                                 "size": "mega"
+                                 }
+                                 ]
+                       },
+                       {
+                       "name": "Electric Joy Ride",
+                       "url": "http://www.last.fm/music/Electric+Joy+Ride",
+                       "image": [
+                                 {
+                                 "#text": "http://userserve-ak.last.fm/serve/34/80201437.png",
+                                 "size": "small"
+                                 },
+                                 {
+                                 "#text": "http://userserve-ak.last.fm/serve/64/80201437.png",
+                                 "size": "medium"
+                                 },
+                                 {
+                                 "#text": "http://userserve-ak.last.fm/serve/126/80201437.png",
+                                 "size": "large"
+                                 },
+                                 {
+                                 "#text": "http://userserve-ak.last.fm/serve/252/80201437.png",
+                                 "size": "extralarge"
+                                 },
+                                 {
+                                 "#text": "http://userserve-ak.last.fm/serve/500/80201437/Electric+Joy+Ride+20120718_2126_scrot.png",
+                                 "size": "mega"
+                                 }
+                                 ]
+                       },
+                       {
+                       "name": "SCNTST",
+                       "url": "http://www.last.fm/music/SCNTST",
+                       "image": [
+                                 {
+                                 "#text": "http://userserve-ak.last.fm/serve/34/95712127.jpg",
+                                 "size": "small"
+                                 },
+                                 {
+                                 "#text": "http://userserve-ak.last.fm/serve/64/95712127.jpg",
+                                 "size": "medium"
+                                 },
+                                 {
+                                 "#text": "http://userserve-ak.last.fm/serve/126/95712127.jpg",
+                                 "size": "large"
+                                 },
+                                 {
+                                 "#text": "http://userserve-ak.last.fm/serve/252/95712127.jpg",
+                                 "size": "extralarge"
+                                 },
+                                 {
+                                 "#text": "http://userserve-ak.last.fm/serve/500/95712127/SCNTST+4J543.jpg",
+                                 "size": "mega"
+                                 }
+                                 ]
+                       },
+                       {
+                       "name": "TWR72",
+                       "url": "http://www.last.fm/music/TWR72",
+                       "image": [
+                                 {
+                                 "#text": "http://userserve-ak.last.fm/serve/34/78333124.jpg",
+                                 "size": "small"
+                                 },
+                                 {
+                                 "#text": "http://userserve-ak.last.fm/serve/64/78333124.jpg",
+                                 "size": "medium"
+                                 },
+                                 {
+                                 "#text": "http://userserve-ak.last.fm/serve/126/78333124.jpg",
+                                 "size": "large"
+                                 },
+                                 {
+                                 "#text": "http://userserve-ak.last.fm/serve/252/78333124.jpg",
+                                 "size": "extralarge"
+                                 },
+                                 {
+                                 "#text": "http://userserve-ak.last.fm/serve/500/78333124/TWR72.jpg",
+                                 "size": "mega"
+                                 }
+                                 ]
+                       },
+                       {
+                       "name": "CLIFF LOTHAR",
+                       "url": "http://www.last.fm/music/CLIFF+LOTHAR",
+                       "image": [
+                                 {
+                                 "#text": "http://userserve-ak.last.fm/serve/34/97799939.jpg",
+                                 "size": "small"
+                                 },
+                                 {
+                                 "#text": "http://userserve-ak.last.fm/serve/64/97799939.jpg",
+                                 "size": "medium"
+                                 },
+                                 {
+                                 "#text": "http://userserve-ak.last.fm/serve/126/97799939.jpg",
+                                 "size": "large"
+                                 },
+                                 {
+                                 "#text": "http://userserve-ak.last.fm/serve/252/97799939.jpg",
+                                 "size": "extralarge"
+                                 },
+                                 {
+                                 "#text": "http://userserve-ak.last.fm/serve/500/97799939/CLIFF+LOTHAR+716+Playlists+++Pl.jpg",
+                                 "size": "mega"
+                                 }
+                                 ]
+                       }
+                       ]
+        },
+        "tags": {
+            "tag": [
+                    {
+                    "name": "house",
+                    "url": "http://www.last.fm/tag/house"
+                    },
+                    {
+                    "name": "electro",
+                    "url": "http://www.last.fm/tag/electro"
+                    },
+                    {
+                    "name": "fils de pute",
+                    "url": "http://www.last.fm/tag/fils%20de%20pute"
+                    },
+                    {
+                    "name": "dance",
+                    "url": "http://www.last.fm/tag/dance"
+                    },
+                    {
+                    "name": "techno",
+                    "url": "http://www.last.fm/tag/techno"
+                    }
+                    ]
+        },
+        "bio": {
+            "links": {
+                "link": {
+                    "#text": "",
+                    "rel": "original",
+                    "href": "http://www.last.fm/music/Salut+C%27est+Cool/+wiki"
+                }
+            },
+            "published": "",
+            "summary": "",
+            "content": ""
+        }
+    }
+}
