@@ -27,7 +27,26 @@ extension NSURL {
     
     class func testURLForMethod(method: String!, params: [String: String]!) -> NSURL? {
         #if TESTING
-            var filename = "artist.search-SalutCestCool.json"
+            var filename = ""
+            
+            if method == "artist.search"
+            {
+                if params["artist"] == "Salut C'est Cool"
+                {
+                    filename = "artist.search-SalutCestCool.json"
+                }
+                else if params["artist"] == "Salut"
+                {
+                    filename = "artist.search-Salut-page1.json"
+                }
+            }
+            else if method == "artist.getinfo"
+            {
+                if params["mib"] == "70c0cd8b-a942-4b8f-b421-b2b5218e23b6"
+                {
+                    filename = "artist.getinfo-70c0cd8b-a942-4b8f-b421-b2b5218e23b6.json"
+                }
+            }
             
             if let path = NSBundle.mainBundle().pathForResource(filename, ofType: nil, inDirectory: nil)
             {
