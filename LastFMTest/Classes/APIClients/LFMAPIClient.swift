@@ -22,7 +22,7 @@ class LFMAPIClient: NSObject {
     }
     
     // MARK: generic calls
-    func getMethod(method: String!, parameters: [String: String]!, page: Int16, callback: (results: AnyObject?, error: NSError?, haveNext: Bool) -> Void)
+    func getMethod(method: String!, parameters: [String: String]!, page: Int16, callback: (result: AnyObject?, error: NSError?, haveNext: Bool) -> Void)
     {
         var params = parameters
         params["api_key"] = api_key
@@ -38,47 +38,55 @@ class LFMAPIClient: NSObject {
         #endif
 
         if let u = url?
-        {            
+        {
             let request = NSURLRequest(URL: u)
             
             NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: { (response, data, error) -> Void in
                 
                 var parsingError: NSError?
                 
-                let ret = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &parsingError) as NSDictionary
+                let unwrappedReturn: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &parsingError)
+                
+                if let error = parsingError?
+                {
+                    println("Parsing Error: \(error)")
+                }
                 
                 // calcul if have next
                 var haveNext = false
                 
-                if let results = ret["results"] as? NSDictionary
+                if let wrappedReturn = unwrappedReturn as? NSDictionary
                 {
-                    if let totalResults = results["opensearch:totalResults"] as? String
+                    if let results = wrappedReturn["results"] as? NSDictionary
                     {
-                        if let startIndex = results["opensearch:startIndex"] as? String
+                        if let totalResults = results["opensearch:totalResults"] as? String
                         {
-                            var itemsPerPage  = 30 // default value according to the API documentation
-                            
-                            if let itemsPage = results["opensearch:itemsPerPage"] as? String
+                            if let startIndex = results["opensearch:startIndex"] as? String
                             {
-                                itemsPerPage = itemsPage.toInt()!
+                                var itemsPerPage  = 30 // default value according to the API documentation
+                                
+                                if let itemsPage = results["opensearch:itemsPerPage"] as? String
+                                {
+                                    itemsPerPage = itemsPage.toInt()!
+                                }
+                                
+                                let totalRes = totalResults.toInt()!
+                                let startIdx = startIndex.toInt()!
+                                
+                                let itemsRemaining = totalRes - (itemsPerPage + startIdx)
+                                
+                                if itemsRemaining > 0
+                                {
+                                    haveNext = true
+                                }
                             }
                             
-                            let totalRes = totalResults.toInt()!
-                            let startIdx = startIndex.toInt()!
-                            
-                            let itemsRemaining = totalRes - (itemsPerPage + startIdx)
-                            
-                            if itemsRemaining > 0
-                            {
-                                haveNext = true
-                            }
                         }
-                        
                     }
                 }
                 
                 
-                callback(results: ret, error: error, haveNext: haveNext)
+                callback(result: unwrappedReturn, error: error, haveNext: haveNext)
             })
         }
         
@@ -94,9 +102,28 @@ class LFMAPIClient: NSObject {
     {
         var params = ["artist" : artistSearch]
         
-        LFMAPIClient.sharedClient.getMethod("artist.search", parameters: params, page: page) { (results, error, haveNext) -> Void in
+        LFMAPIClient.sharedClient.getMethod("artist.search", parameters: params, page: page) { (result, error, haveNext) -> Void in
             
-//            NSLog("\(results)")
+            if let wrappedResult = result as NSDictionary?
+            {
+                if let results = wrappedResult["results"] as NSDictionary?
+                {
+                    if let matches = results["artistmatches"] as NSDictionary?
+                    {
+                        if let artists: AnyObject = matches["artist"]
+                        {
+                            if artists is NSDictionary
+                            {
+                                println("artists is dictionary")
+                            }
+                            else if artists is NSArray
+                            {
+                                println("artists is array")
+                            }
+                        }
+                    }
+                }
+            }
             
             callback(artists: nil, error: error, haveNext: haveNext)
             

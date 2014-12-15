@@ -27,7 +27,7 @@ extension NSURL {
     
     class func testURLForMethod(method: String!, params: [String: String]!) -> NSURL? {
         #if TESTING
-            NSLog("test mock url for method: \(method) and params: \(params)")
+            println("test mock url for method: \(method) and params: \(params)")
             
             var filename = ""
             
@@ -56,7 +56,7 @@ extension NSURL {
                 }
             }
             
-            NSLog("mock file: \(filename)")
+            println("mock file: \(filename)")
             
             if let path = NSBundle.mainBundle().pathForResource(filename, ofType: nil, inDirectory: nil)
             {
