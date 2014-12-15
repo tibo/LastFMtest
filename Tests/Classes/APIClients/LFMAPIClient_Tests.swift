@@ -24,8 +24,94 @@ class LFMAPIClient_Tests: XCTestCase {
     func test_artistSearch_withSearch_shouldReturnValidResult() {
         let expectation = self.expectationWithDescription("test artist.search")
         
-        LFMAPIClient.searchArtist("Salut C'est Cool", callback: { (artists, error) -> Void in
+        LFMAPIClient.searchArtist("Salut C'est Cool", callback: { (artists, error, hasNext) -> Void in
             expectation.fulfill()
+            
+            XCTAssertFalse(hasNext, "should not had next")
+        })
+        
+        waitForExpectationsWithTimeout(60, handler: { error in
+            
+        })
+    }
+    
+    func test_artistSearch_withSearchSalutAndNoPage_shouldHaveNext() {
+        let expectation = self.expectationWithDescription("test artist.search")
+        
+        LFMAPIClient.searchArtist("Salut", callback: { (artists, error, haveNext) -> Void in
+            expectation.fulfill()
+            
+            XCTAssert(haveNext, "should have next")
+        })
+        
+        waitForExpectationsWithTimeout(60, handler: { error in
+            
+        })
+    }
+    
+    func test_artistSearch_withSearchSalutAndPage1_shouldHaveNext() {
+        let expectation = self.expectationWithDescription("test artist.search")
+        
+        LFMAPIClient.searchArtist("Salut", page: 1, callback: { (artists, error, haveNext) -> Void in
+            expectation.fulfill()
+            
+            XCTAssert(haveNext, "should have next")
+        })
+        
+        waitForExpectationsWithTimeout(60, handler: { error in
+            
+        })
+    }
+    
+    func test_artistSearch_withSearchSalutAndPage2_shouldHaveNext() {
+        let expectation = self.expectationWithDescription("test artist.search")
+        
+        LFMAPIClient.searchArtist("Salut", page: 2, callback: { (artists, error, haveNext) -> Void in
+            expectation.fulfill()
+            
+            XCTAssert(haveNext, "should have next")
+        })
+        
+        waitForExpectationsWithTimeout(60, handler: { error in
+            
+        })
+    }
+    
+    func test_artistSearch_withSearchSalutAndPage3_shouldHaveNext() {
+        let expectation = self.expectationWithDescription("test artist.search")
+        
+        LFMAPIClient.searchArtist("Salut", page: 3, callback: { (artists, error, haveNext) -> Void in
+            expectation.fulfill()
+            
+            XCTAssert(haveNext, "should have next")
+        })
+        
+        waitForExpectationsWithTimeout(60, handler: { error in
+            
+        })
+    }
+    
+    func test_artistSearch_withSearchSalutAndPage4_shouldHaveNext() {
+        let expectation = self.expectationWithDescription("test artist.search")
+        
+        LFMAPIClient.searchArtist("Salut", page: 4, callback: { (artists, error, haveNext) -> Void in
+            expectation.fulfill()
+            
+            XCTAssert(haveNext, "should have next")
+        })
+        
+        waitForExpectationsWithTimeout(60, handler: { error in
+            
+        })
+    }
+    
+    func test_artistSearch_withSearchSalutAndPage5_shouldNotHaveNext() {
+        let expectation = self.expectationWithDescription("test artist.search")
+        
+        LFMAPIClient.searchArtist("Salut", page: 5, callback: { (artists, error, haveNext) -> Void in
+            expectation.fulfill()
+            
+            XCTAssertFalse(haveNext, "should not have next")
         })
         
         waitForExpectationsWithTimeout(60, handler: { error in

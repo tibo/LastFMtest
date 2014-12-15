@@ -27,6 +27,8 @@ extension NSURL {
     
     class func testURLForMethod(method: String!, params: [String: String]!) -> NSURL? {
         #if TESTING
+            NSLog("test mock url for method: \(method) and params: \(params)")
+            
             var filename = ""
             
             if method == "artist.search"
@@ -38,6 +40,12 @@ extension NSURL {
                 else if params["artist"] == "Salut"
                 {
                     filename = "artist.search-Salut-page1.json"
+            
+                    if let pageString = params["page"]?
+                    {
+                        filename = "artist.search-Salut-page" + pageString + ".json"
+                    }
+            
                 }
             }
             else if method == "artist.getinfo"
@@ -47,6 +55,8 @@ extension NSURL {
                     filename = "artist.getinfo-70c0cd8b-a942-4b8f-b421-b2b5218e23b6.json"
                 }
             }
+            
+            NSLog("mock file: \(filename)")
             
             if let path = NSBundle.mainBundle().pathForResource(filename, ofType: nil, inDirectory: nil)
             {
