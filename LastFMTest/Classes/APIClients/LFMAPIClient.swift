@@ -39,9 +39,12 @@ class LFMAPIClient: NSObject {
 
         if let u = url?
         {
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = true
             let request = NSURLRequest(URL: u)
             
             NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: { (response, data, error) -> Void in
+                
+                UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                 
                 var parsingError: NSError?
                 
@@ -50,6 +53,8 @@ class LFMAPIClient: NSObject {
                 if let error = parsingError?
                 {
                     println("Parsing Error: \(error)")
+                    callback(result: nil, error: error, haveNext: false)
+                    return
                 }
                 
                 // calcul if have next
@@ -83,8 +88,19 @@ class LFMAPIClient: NSObject {
                             
                         }
                     }
+                    else if let apiError = wrappedReturn["error"] as? Int// handle API error
+                    {
+                        println("Error: \(wrappedReturn)")
+                        
+                        if let message = wrappedReturn["message"] as? String
+                        {
+                            var error = NSError(domain: "LastFM", code: apiError, userInfo: [NSLocalizedDescriptionKey : message])
+                            
+                            callback(result: nil, error: error, haveNext: false)
+                            return
+                        }
+                    }
                 }
-                
                 
                 callback(result: unwrappedReturn, error: error, haveNext: haveNext)
             })
@@ -110,30 +126,33 @@ class LFMAPIClient: NSObject {
             {
                 if let results = wrappedResult["results"] as NSDictionary?
                 {
-                    if let matches = results["artistmatches"] as NSDictionary?
+                    if let matches: AnyObject = results["artistmatches"]?
                     {
-                        if let artists: AnyObject = matches["artist"]?
+                        if matches is NSDictionary // cause sometime it's not...
                         {
-                            
-                            if artists is NSDictionary
+                            if let artists: AnyObject = (matches as NSDictionary)["artist"]?
                             {
-                                var artist = Artist()
-                                artist.fillWithDictionary(artists as NSDictionary)
                                 
-                                artistsArray = [artist]
-                            }
-                            else if artists is NSArray
-                            {
-                                artistsArray = [Artist]()
-                                
-                                for a in (artists as NSArray)
+                                if artists is NSDictionary
                                 {
                                     var artist = Artist()
-                                    artist.fillWithDictionary(a as NSDictionary)
+                                    artist.fillWithDictionary(artists as NSDictionary)
                                     
-                                    artistsArray!.append(artist)
+                                    artistsArray = [artist]
                                 }
-                                
+                                else if artists is NSArray
+                                {
+                                    artistsArray = [Artist]()
+                                    
+                                    for a in (artists as NSArray)
+                                    {
+                                        var artist = Artist()
+                                        artist.fillWithDictionary(a as NSDictionary)
+                                        
+                                        artistsArray!.append(artist)
+                                    }
+                                    
+                                }
                             }
                         }
                     }

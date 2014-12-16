@@ -1,0 +1,96 @@
+//
+//  SearchTableViewController.swift
+//  LastFMTest
+//
+//  Created by Thibaut LE LEVIER on 16/12/2014.
+//  Copyright (c) 2014 Thibaut LE LEVIER. All rights reserved.
+//
+
+import UIKit
+
+class SearchTableViewController: UITableViewController, UISearchBarDelegate {
+    
+    var artists = [Artist]()
+
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+    }
+
+    override func didReceiveMemoryWarning()
+    {
+        super.didReceiveMemoryWarning()
+    }
+
+    // MARK: - Table view data source
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return self.artists.count
+    }
+
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("artistResultCell", forIndexPath: indexPath) as UITableViewCell
+
+        let artist = self.artists[indexPath.row]
+        
+        cell.textLabel.text = artist.name
+
+        return cell
+    }
+    
+    // MARK: - UISearchBarDelegate
+    func searchBarTextDidBeginEditing(searchBar: UISearchBar)
+    {
+        searchBar.showsCancelButton = true
+    }
+    
+    func searchBarTextDidEndEditing(searchBar: UISearchBar)
+    {
+        searchBar.showsCancelButton = false
+    }
+    
+    func searchBarCancelButtonClicked(searchBar: UISearchBar)
+    {
+        searchBar.resignFirstResponder()
+    }
+    
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String)
+    {
+        if searchBar.text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) == 0
+        {
+            self.artists = [Artist]()
+            self.tableView.reloadData()
+        }
+    }
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar)
+    {
+        searchBar.resignFirstResponder()
+        
+        if searchBar.text.lengthOfBytesUsingEncoding(NSUTF8StringEncoding) == 0
+        {
+            return
+        }
+        
+        LFMAPIClient.searchArtist(searchBar.text,
+            callback: { (artists, error, haveNext) -> Void in
+                if let wrappedError = error?
+                {
+                    var alert = UIAlertController(title: "Error", message: wrappedError.localizedDescription, preferredStyle: .Alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                    self.presentViewController(alert, animated: true, completion: nil)
+                }
+                else if let wrappedArtists = artists?
+                {
+                    self.artists = wrappedArtists
+                    self.tableView.reloadData()
+                }
+        })
+    }
+    
+    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+    }
+
+}
