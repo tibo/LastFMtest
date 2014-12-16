@@ -27,7 +27,8 @@ class LFMAPIClient_Tests: XCTestCase {
         LFMAPIClient.searchArtist("Salut C'est Cool", callback: { (artists, error, hasNext) -> Void in
             expectation.fulfill()
             
-            XCTAssertFalse(hasNext, "should not had next")
+            XCTAssert(artists!.count == 1, "should have one result")
+            XCTAssertFalse(hasNext, "should not have next")
         })
         
         waitForExpectationsWithTimeout(60, handler: { error in
@@ -35,12 +36,13 @@ class LFMAPIClient_Tests: XCTestCase {
         })
     }
     
-    func test_artistSearch_withSearchSalutAndNoPage_shouldHaveNext() {
+    func test_artistSearch_withSearchSalutAndNoPage_shouldHaveValidResult() {
         let expectation = self.expectationWithDescription("test artist.search")
         
         LFMAPIClient.searchArtist("Salut", callback: { (artists, error, haveNext) -> Void in
             expectation.fulfill()
             
+            XCTAssert(artists!.count == 30, "should have 30 result")
             XCTAssert(haveNext, "should have next")
         })
         
@@ -49,12 +51,13 @@ class LFMAPIClient_Tests: XCTestCase {
         })
     }
     
-    func test_artistSearch_withSearchSalutAndPage1_shouldHaveNext() {
+    func test_artistSearch_withSearchSalutAndPage1_shouldHaveValidResult() {
         let expectation = self.expectationWithDescription("test artist.search")
         
         LFMAPIClient.searchArtist("Salut", page: 1, callback: { (artists, error, haveNext) -> Void in
             expectation.fulfill()
             
+            XCTAssert(artists!.count == 30, "should have 30 result")
             XCTAssert(haveNext, "should have next")
         })
         
@@ -63,12 +66,13 @@ class LFMAPIClient_Tests: XCTestCase {
         })
     }
     
-    func test_artistSearch_withSearchSalutAndPage2_shouldHaveNext() {
+    func test_artistSearch_withSearchSalutAndPage2_shouldHaveValidResult() {
         let expectation = self.expectationWithDescription("test artist.search")
         
         LFMAPIClient.searchArtist("Salut", page: 2, callback: { (artists, error, haveNext) -> Void in
             expectation.fulfill()
             
+            XCTAssert(artists!.count == 30, "should have 30 result")
             XCTAssert(haveNext, "should have next")
         })
         
@@ -77,12 +81,13 @@ class LFMAPIClient_Tests: XCTestCase {
         })
     }
     
-    func test_artistSearch_withSearchSalutAndPage3_shouldHaveNext() {
+    func test_artistSearch_withSearchSalutAndPage3_shouldHaveValidResult() {
         let expectation = self.expectationWithDescription("test artist.search")
         
         LFMAPIClient.searchArtist("Salut", page: 3, callback: { (artists, error, haveNext) -> Void in
             expectation.fulfill()
             
+            XCTAssert(artists!.count == 30, "should have 30 result")
             XCTAssert(haveNext, "should have next")
         })
         
@@ -91,12 +96,13 @@ class LFMAPIClient_Tests: XCTestCase {
         })
     }
     
-    func test_artistSearch_withSearchSalutAndPage4_shouldHaveNext() {
+    func test_artistSearch_withSearchSalutAndPage4_shouldHaveValidResult() {
         let expectation = self.expectationWithDescription("test artist.search")
         
         LFMAPIClient.searchArtist("Salut", page: 4, callback: { (artists, error, haveNext) -> Void in
             expectation.fulfill()
             
+            XCTAssert(artists!.count == 30, "should have 30 result")
             XCTAssert(haveNext, "should have next")
         })
         
@@ -105,12 +111,13 @@ class LFMAPIClient_Tests: XCTestCase {
         })
     }
     
-    func test_artistSearch_withSearchSalutAndPage5_shouldNotHaveNext() {
+    func test_artistSearch_withSearchSalutAndPage5_shouldHaveValidResult() {
         let expectation = self.expectationWithDescription("test artist.search")
         
         LFMAPIClient.searchArtist("Salut", page: 5, callback: { (artists, error, haveNext) -> Void in
             expectation.fulfill()
             
+            XCTAssert(artists!.count == 25, "should have 25 result")
             XCTAssertFalse(haveNext, "should not have next")
         })
         

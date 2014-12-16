@@ -32,6 +32,8 @@
 		11A4C50E1A3C7F5B00E9EAB2 /* LFMAPIClient_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A4C50D1A3C7F5B00E9EAB2 /* LFMAPIClient_Tests.swift */; };
 		11A4C50F1A3C7F6600E9EAB2 /* LFMAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A4C4F51A3C6C0E00E9EAB2 /* LFMAPIClient.swift */; };
 		11A4C5121A3C80EA00E9EAB2 /* NSURL+urlBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A4C5111A3C80EA00E9EAB2 /* NSURL+urlBuilder.swift */; };
+		11C26AF21A3F68B30059A049 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C26AF11A3F68B30059A049 /* Artist.swift */; };
+		11C26AF31A3F68DC0059A049 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C26AF11A3F68B30059A049 /* Artist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,7 @@
 		11A4C5031A3C7F4200E9EAB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11A4C50D1A3C7F5B00E9EAB2 /* LFMAPIClient_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LFMAPIClient_Tests.swift; sourceTree = "<group>"; };
 		11A4C5111A3C80EA00E9EAB2 /* NSURL+urlBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSURL+urlBuilder.swift"; sourceTree = "<group>"; };
+		11C26AF11A3F68B30059A049 /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +154,7 @@
 		11A4C4F31A3C683200E9EAB2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				11C26AEF1A3F67740059A049 /* Models */,
 				11A4C5101A3C80B600E9EAB2 /* Utils */,
 				11A4C4F41A3C684400E9EAB2 /* APIClients */,
 			);
@@ -205,6 +209,14 @@
 				11A4C5111A3C80EA00E9EAB2 /* NSURL+urlBuilder.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		11C26AEF1A3F67740059A049 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				11C26AF11A3F68B30059A049 /* Artist.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,6 +336,7 @@
 				11A4C4D61A3C666100E9EAB2 /* ViewController.swift in Sources */,
 				11A4C4F61A3C6C0E00E9EAB2 /* LFMAPIClient.swift in Sources */,
 				11A4C5121A3C80EA00E9EAB2 /* NSURL+urlBuilder.swift in Sources */,
+				11C26AF21A3F68B30059A049 /* Artist.swift in Sources */,
 				11A4C4D41A3C666100E9EAB2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -335,6 +348,7 @@
 				112AB0AF1A3C8A9E00F0C362 /* NSURL+urlBuilder_Tests.swift in Sources */,
 				11A4C50E1A3C7F5B00E9EAB2 /* LFMAPIClient_Tests.swift in Sources */,
 				112AB0B01A3C8AA300F0C362 /* NSURL+urlBuilder.swift in Sources */,
+				11C26AF31A3F68DC0059A049 /* Artist.swift in Sources */,
 				11A4C50F1A3C7F6600E9EAB2 /* LFMAPIClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

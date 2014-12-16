@@ -93,16 +93,18 @@ class LFMAPIClient: NSObject {
     }
     
     // MARK: search artist
-    class func searchArtist(artistSearch: String, callback: (artists: [String]?, error: NSError?, haveNext: Bool) -> Void)
+    class func searchArtist(artistSearch: String, callback: (artists: [Artist]?, error: NSError?, haveNext: Bool) -> Void)
     {
         LFMAPIClient.searchArtist(artistSearch, page: 1, callback: callback)
     }
     
-    class func searchArtist(artistSearch: String, page: Int16, callback: (artists: [String]?, error: NSError?, haveNext: Bool) -> Void)
+    class func searchArtist(artistSearch: String, page: Int16, callback: (artists: [Artist]?, error: NSError?, haveNext: Bool) -> Void)
     {
         var params = ["artist" : artistSearch]
         
         LFMAPIClient.sharedClient.getMethod("artist.search", parameters: params, page: page) { (result, error, haveNext) -> Void in
+            
+            var artistsArray: [Artist]?
             
             if let wrappedResult = result as NSDictionary?
             {
@@ -110,22 +112,35 @@ class LFMAPIClient: NSObject {
                 {
                     if let matches = results["artistmatches"] as NSDictionary?
                     {
-                        if let artists: AnyObject = matches["artist"]
+                        if let artists: AnyObject = matches["artist"]?
                         {
+                            
                             if artists is NSDictionary
                             {
-                                println("artists is dictionary")
+                                var artist = Artist()
+                                artist.fillWithDictionary(artists as NSDictionary)
+                                
+                                artistsArray = [artist]
                             }
                             else if artists is NSArray
                             {
-                                println("artists is array")
+                                artistsArray = [Artist]()
+                                
+                                for a in (artists as NSArray)
+                                {
+                                    var artist = Artist()
+                                    artist.fillWithDictionary(a as NSDictionary)
+                                    
+                                    artistsArray!.append(artist)
+                                }
+                                
                             }
                         }
                     }
                 }
             }
             
-            callback(artists: nil, error: error, haveNext: haveNext)
+            callback(artists: artistsArray, error: error, haveNext: haveNext)
             
         }
     }
