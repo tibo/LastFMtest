@@ -56,6 +56,14 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
                 artistImageView.hnk_setImageFromURL(imageURL)
             }
         }
+        
+        if let listeners = artist.listeners?
+        {
+            if let listenersLabel = cell.listenersLabel?
+            {
+                listenersLabel.text = "\(listeners) Listeners"
+            }
+        }
 
         return cell
     }
