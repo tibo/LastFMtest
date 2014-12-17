@@ -11,10 +11,16 @@ import UIKit
 class SearchTableViewController: UITableViewController, UISearchBarDelegate {
     
     var artists = [Artist]()
+    @IBOutlet var searchBar: UISearchBar?
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        if let searchBar = self.searchBar?
+        {
+            searchBar.accessibilityLabel = "artistSearchBar"
+        }
     }
 
     override func didReceiveMemoryWarning()
@@ -33,7 +39,11 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
 
         let artist = self.artists[indexPath.row]
         
-        cell.textLabel.text = artist.name
+        if let artistName = artist.name?
+        {
+            cell.accessibilityLabel = String("artist-" + artistName)
+            cell.textLabel.text = artistName
+        }
 
         return cell
     }

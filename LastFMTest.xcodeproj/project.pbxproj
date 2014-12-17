@@ -35,6 +35,9 @@
 		11C26AF31A3F68DC0059A049 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C26AF11A3F68B30059A049 /* Artist.swift */; };
 		11C26AF61A4079CE0059A049 /* Artist_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C26AF51A4079CE0059A049 /* Artist_Tests.swift */; };
 		11C26AF91A4080E20059A049 /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C26AF81A4080E20059A049 /* SearchTableViewController.swift */; };
+		11C26D7F1A4098090059A049 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11C26D7E1A4098090059A049 /* CoreGraphics.framework */; };
+		11C26D951A40998B0059A049 /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C26D941A40998B0059A049 /* UITests.swift */; };
+		11E3AE141A41B30A00D339F7 /* libKIF.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 11E3AE0B1A41B2EC00D339F7 /* libKIF.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +47,55 @@
 			proxyType = 1;
 			remoteGlobalIDString = 11A4C4CD1A3C666100E9EAB2;
 			remoteInfo = LastFMTest;
+		};
+		11C26D791A4097D50059A049 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11A4C4C61A3C666100E9EAB2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11A4C4CD1A3C666100E9EAB2;
+			remoteInfo = LastFMTest;
+		};
+		11E3AE0A1A41B2EC00D339F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11E3AE011A41B2EC00D339F7 /* KIF.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EABD46AA1857A0C700A5F081;
+			remoteInfo = KIF;
+		};
+		11E3AE0C1A41B2EC00D339F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11E3AE011A41B2EC00D339F7 /* KIF.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB72047C1680DDAD00278DA2;
+			remoteInfo = "KIF-OCUnit";
+		};
+		11E3AE0E1A41B2EC00D339F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11E3AE011A41B2EC00D339F7 /* KIF.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB60ECC1177F8C83005A041A;
+			remoteInfo = "Test Host";
+		};
+		11E3AE101A41B2EC00D339F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11E3AE011A41B2EC00D339F7 /* KIF.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EABD46CD1857A0F300A5F081;
+			remoteInfo = "KIF Tests";
+		};
+		11E3AE121A41B2EC00D339F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11E3AE011A41B2EC00D339F7 /* KIF.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB60ECEB177F8DB3005A041A;
+			remoteInfo = "KIF Tests-OCUnit";
+		};
+		11E3AE151A41B31200D339F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11E3AE011A41B2EC00D339F7 /* KIF.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EABD46791857A0C700A5F081;
+			remoteInfo = KIF;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -70,6 +122,12 @@
 		11C26AF11A3F68B30059A049 /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		11C26AF51A4079CE0059A049 /* Artist_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist_Tests.swift; sourceTree = "<group>"; };
 		11C26AF81A4080E20059A049 /* SearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
+		11C26D731A4097D50059A049 /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11C26D761A4097D50059A049 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11C26D7E1A4098090059A049 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		11C26D941A40998B0059A049 /* UITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITests.swift; sourceTree = "<group>"; };
+		11C26D961A4099BA0059A049 /* BridgingHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BridgingHeader.h; sourceTree = "<group>"; };
+		11E3AE011A41B2EC00D339F7 /* KIF.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KIF.xcodeproj; path = KIF/KIF.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +142,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11C26D701A4097D50059A049 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11E3AE141A41B30A00D339F7 /* libKIF.a in Frameworks */,
+				11C26D7F1A4098090059A049 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +184,7 @@
 			children = (
 				11A4C4D01A3C666100E9EAB2 /* LastFMTest */,
 				11A4C5011A3C7F4200E9EAB2 /* Tests */,
+				11C26D741A4097D50059A049 /* UITests */,
 				11A4C4CF1A3C666100E9EAB2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -126,6 +194,7 @@
 			children = (
 				11A4C4CE1A3C666100E9EAB2 /* LastFMTest.app */,
 				11A4C5001A3C7F4200E9EAB2 /* Tests.xctest */,
+				11C26D731A4097D50059A049 /* UITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -238,6 +307,38 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		11C26D741A4097D50059A049 /* UITests */ = {
+			isa = PBXGroup;
+			children = (
+				11E3AE011A41B2EC00D339F7 /* KIF.xcodeproj */,
+				11C26D7E1A4098090059A049 /* CoreGraphics.framework */,
+				11C26D751A4097D50059A049 /* Supporting Files */,
+				11C26D941A40998B0059A049 /* UITests.swift */,
+				11C26D961A4099BA0059A049 /* BridgingHeader.h */,
+			);
+			path = UITests;
+			sourceTree = "<group>";
+		};
+		11C26D751A4097D50059A049 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				11C26D761A4097D50059A049 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		11E3AE021A41B2EC00D339F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11E3AE0B1A41B2EC00D339F7 /* libKIF.a */,
+				11E3AE0D1A41B2EC00D339F7 /* libKIF-OCUnit.a */,
+				11E3AE0F1A41B2EC00D339F7 /* Test Host.app */,
+				11E3AE111A41B2EC00D339F7 /* KIF Tests - XCTest.xctest */,
+				11E3AE131A41B2EC00D339F7 /* KIF Tests-OCUnit.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -276,6 +377,25 @@
 			productReference = 11A4C5001A3C7F4200E9EAB2 /* Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		11C26D721A4097D50059A049 /* UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11C26D7B1A4097D50059A049 /* Build configuration list for PBXNativeTarget "UITests" */;
+			buildPhases = (
+				11C26D6F1A4097D50059A049 /* Sources */,
+				11C26D701A4097D50059A049 /* Frameworks */,
+				11C26D711A4097D50059A049 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11E3AE161A41B31200D339F7 /* PBXTargetDependency */,
+				11C26D7A1A4097D50059A049 /* PBXTargetDependency */,
+			);
+			name = UITests;
+			productName = UITests;
+			productReference = 11C26D731A4097D50059A049 /* UITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -292,6 +412,10 @@
 						CreatedOnToolsVersion = 6.1;
 						TestTargetID = 11A4C4CD1A3C666100E9EAB2;
 					};
+					11C26D721A4097D50059A049 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = 11A4C4CD1A3C666100E9EAB2;
+					};
 				};
 			};
 			buildConfigurationList = 11A4C4C91A3C666100E9EAB2 /* Build configuration list for PBXProject "LastFMTest" */;
@@ -305,13 +429,58 @@
 			mainGroup = 11A4C4C51A3C666000E9EAB2;
 			productRefGroup = 11A4C4CF1A3C666100E9EAB2 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 11E3AE021A41B2EC00D339F7 /* Products */;
+					ProjectRef = 11E3AE011A41B2EC00D339F7 /* KIF.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				11A4C4CD1A3C666100E9EAB2 /* LastFMTest */,
 				11A4C4FF1A3C7F4200E9EAB2 /* Tests */,
+				11C26D721A4097D50059A049 /* UITests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		11E3AE0B1A41B2EC00D339F7 /* libKIF.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libKIF.a;
+			remoteRef = 11E3AE0A1A41B2EC00D339F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		11E3AE0D1A41B2EC00D339F7 /* libKIF-OCUnit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libKIF-OCUnit.a";
+			remoteRef = 11E3AE0C1A41B2EC00D339F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		11E3AE0F1A41B2EC00D339F7 /* Test Host.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Test Host.app";
+			remoteRef = 11E3AE0E1A41B2EC00D339F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		11E3AE111A41B2EC00D339F7 /* KIF Tests - XCTest.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "KIF Tests - XCTest.xctest";
+			remoteRef = 11E3AE101A41B2EC00D339F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		11E3AE131A41B2EC00D339F7 /* KIF Tests-OCUnit.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "KIF Tests-OCUnit.octest";
+			remoteRef = 11E3AE121A41B2EC00D339F7 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		11A4C4CC1A3C666100E9EAB2 /* Resources */ = {
@@ -345,6 +514,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		11C26D711A4097D50059A049 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -373,6 +549,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		11C26D6F1A4097D50059A049 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11C26D951A40998B0059A049 /* UITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -380,6 +564,16 @@
 			isa = PBXTargetDependency;
 			target = 11A4C4CD1A3C666100E9EAB2 /* LastFMTest */;
 			targetProxy = 11A4C5061A3C7F4200E9EAB2 /* PBXContainerItemProxy */;
+		};
+		11C26D7A1A4097D50059A049 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11A4C4CD1A3C666100E9EAB2 /* LastFMTest */;
+			targetProxy = 11C26D791A4097D50059A049 /* PBXContainerItemProxy */;
+		};
+		11E3AE161A41B31200D339F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = KIF;
+			targetProxy = 11E3AE151A41B31200D339F7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -536,6 +730,57 @@
 			};
 			name = Release;
 		};
+		11C26D7C1A4097D50059A049 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LastFMTest.app/LastFMTest";
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/UITests/BridgingHeader.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LastFMTest.app/LastFMTest";
+			};
+			name = Debug;
+		};
+		11C26D7D1A4097D50059A049 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LastFMTest.app/LastFMTest";
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = UITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "${SRCROOT}/UITests/BridgingHeader.h";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LastFMTest.app/LastFMTest";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -562,6 +807,15 @@
 			buildConfigurations = (
 				11A4C5091A3C7F4300E9EAB2 /* Debug */,
 				11A4C50A1A3C7F4300E9EAB2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11C26D7B1A4097D50059A049 /* Build configuration list for PBXNativeTarget "UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11C26D7C1A4097D50059A049 /* Debug */,
+				11C26D7D1A4097D50059A049 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
