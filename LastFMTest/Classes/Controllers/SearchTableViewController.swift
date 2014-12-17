@@ -35,14 +35,26 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("artistResultCell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("artistResultCell", forIndexPath: indexPath) as ArtistTableViewCell
 
         let artist = self.artists[indexPath.row]
         
         if let artistName = artist.name?
         {
             cell.accessibilityLabel = String("artist-" + artistName)
-            cell.textLabel.text = artistName
+            
+            if let artistNameLabel = cell.artistNameLabel?
+            {
+                artistNameLabel.text = artistName
+            }
+        }
+        
+        if let imageURL = artist.thumbnailImageURL()?
+        {
+            if let artistImageView = cell.artistImageView?
+            {
+                artistImageView.hnk_setImageFromURL(imageURL)
+            }
         }
 
         return cell

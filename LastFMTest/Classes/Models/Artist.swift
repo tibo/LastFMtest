@@ -132,4 +132,37 @@ class Artist: NSObject {
             }
         }
     }
+    
+    func thumbnailImageURL() -> NSURL?
+    {
+        if let images = self.images?
+        {
+            if let url = images["small"]?
+            {
+                return url
+            }
+            
+            if let url = images["medium"]?
+            {
+                return url
+            }
+            
+            if let url = images["large"]?
+            {
+                return url
+            }
+            
+            if let url = images["extralarge"]?
+            {
+                return url
+            }
+            
+            if let url = images["mega"]?
+            {
+                return url
+            }
+        }
+        
+        return nil
+    }
 }

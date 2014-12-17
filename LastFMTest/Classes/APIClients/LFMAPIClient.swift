@@ -47,62 +47,67 @@ class LFMAPIClient: NSObject {
                 UIApplication.sharedApplication().networkActivityIndicatorVisible = false
                 
                 var parsingError: NSError?
-                
-                let unwrappedReturn: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &parsingError)
-                
-                if let error = parsingError?
+                if let wrappedData = data?
                 {
-                    println("Parsing Error: \(error)")
-                    callback(result: nil, error: error, haveNext: false)
-                    return
-                }
-                
-                // calcul if have next
-                var haveNext = false
-                
-                if let wrappedReturn = unwrappedReturn as? NSDictionary
-                {
-                    if let results = wrappedReturn["results"] as? NSDictionary
+                    if let result = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &parsingError) as? NSDictionary
                     {
-                        if let totalResults = results["opensearch:totalResults"] as? String
-                        {
-                            if let startIndex = results["opensearch:startIndex"] as? String
-                            {
-                                var itemsPerPage  = 30 // default value according to the API documentation
-                                
-                                if let itemsPage = results["opensearch:itemsPerPage"] as? String
-                                {
-                                    itemsPerPage = itemsPage.toInt()!
-                                }
-                                
-                                let totalRes = totalResults.toInt()!
-                                let startIdx = startIndex.toInt()!
-                                
-                                let itemsRemaining = totalRes - (itemsPerPage + startIdx)
-                                
-                                if itemsRemaining > 0
-                                {
-                                    haveNext = true
-                                }
-                            }
-                            
-                        }
-                    }
-                    else if let apiError = wrappedReturn["error"] as? Int// handle API error
-                    {
-                        println("Error: \(wrappedReturn)")
                         
-                        if let message = wrappedReturn["message"] as? String
+                        if let error = parsingError?
                         {
-                            var error = NSError(domain: "LastFM", code: apiError, userInfo: [NSLocalizedDescriptionKey : message])
-                            
+                            println("Parsing Error: \(error)")
                             callback(result: nil, error: error, haveNext: false)
                             return
                         }
+                        
+                        // calcul if have next
+                        var haveNext = false
+                        
+                            if let results = result["results"] as? NSDictionary
+                            {
+                                if let totalResults = results["opensearch:totalResults"] as? String
+                                {
+                                    if let startIndex = results["opensearch:startIndex"] as? String
+                                    {
+                                        var itemsPerPage  = 30 // default value according to the API documentation
+                                        
+                                        if let itemsPage = results["opensearch:itemsPerPage"] as? String
+                                        {
+                                            itemsPerPage = itemsPage.toInt()!
+                                        }
+                                        
+                                        let totalRes = totalResults.toInt()!
+                                        let startIdx = startIndex.toInt()!
+                                        
+                                        let itemsRemaining = totalRes - (itemsPerPage + startIdx)
+                                        
+                                        if itemsRemaining > 0
+                                        {
+                                            haveNext = true
+                                        }
+                                    }
+                                    
+                                }
+                                else if let apiError = result["error"] as? Int// handle API error
+                                {
+                                    println("Error: \(result)")
+                                    
+                                    if let message = result["message"] as? String
+                                    {
+                                        var error = NSError(domain: "LastFM", code: apiError, userInfo: [NSLocalizedDescriptionKey : message])
+                                        
+                                        callback(result: nil, error: error, haveNext: false)
+                                        return
+                                    }
+                                }
+                        }
+                        
+                        callback(result: result, error: error, haveNext: haveNext)
                     }
                 }
                 
-                callback(result: unwrappedReturn, error: error, haveNext: haveNext)
+                
+                callback(result: nil, error: error, haveNext: false)
+                
             })
         }
         
