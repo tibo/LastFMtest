@@ -125,4 +125,69 @@ class LFMAPIClient_Tests: XCTestCase {
             
         })
     }
+    
+    func test_artistGetinfo_withArtistWithMDIB_shouldReturnValidResult() {
+        var a = Artist()
+        a.mbid = "70c0cd8b-a942-4b8f-b421-b2b5218e23b6"
+        
+        let expectation = self.expectationWithDescription("test artist.getinfo")
+        
+        LFMAPIClient.getInfoForArtist(a, callback: { (artist, error) -> Void in
+            expectation.fulfill()
+            
+            if let wrappedArtist = artist?
+            {
+                XCTAssertEqual(a, wrappedArtist, "artist should be the same instance")
+                
+                // test some values
+                XCTAssert(wrappedArtist.url!.absoluteString == "http://www.last.fm/music/Salut+C%27est+Cool")
+                XCTAssert(wrappedArtist.images!["mega"]!.absoluteString == "http://userserve-ak.last.fm/serve/500/95960219/Salut+Cest+Cool+salut.jpg")
+                XCTAssertFalse(wrappedArtist.onTour)
+                
+                XCTAssert(wrappedArtist.similars!.count == 5)
+                XCTAssert(wrappedArtist.tags!.count == 5)
+            }
+            else
+            {
+                XCTFail("artist should not be nil")
+            }
+        })
+        
+        waitForExpectationsWithTimeout(60, handler: { error in
+            
+        })
+    }
+    
+    func test_artistGetinfo_withArtistWithName_shouldReturnValidResult() {
+        var a = Artist()
+        a.name = "Cher"
+        
+        let expectation = self.expectationWithDescription("test artist.getinfo")
+        
+        LFMAPIClient.getInfoForArtist(a, callback: { (artist, error) -> Void in
+            expectation.fulfill()
+            
+            if let wrappedArtist = artist?
+            {
+                XCTAssertEqual(a, wrappedArtist, "artist should be the same instance")
+                
+                // test some values
+                XCTAssert(wrappedArtist.url!.absoluteString == "http://www.last.fm/music/Cher")
+                XCTAssert(wrappedArtist.images!["mega"]!.absoluteString == "http://userserve-ak.last.fm/serve/500/63186903/Cher.png")
+                XCTAssertTrue(wrappedArtist.onTour)
+                
+                XCTAssert(wrappedArtist.similars!.count == 5)
+                XCTAssert(wrappedArtist.tags!.count == 5)
+            }
+            else
+            {
+                XCTFail("artist should not be nil")
+            }
+            
+        })
+        
+        waitForExpectationsWithTimeout(60, handler: { error in
+            
+        })
+    }
 }

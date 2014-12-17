@@ -50,9 +50,20 @@ extension NSURL {
             }
             else if method == "artist.getinfo"
             {
-                if params["mib"] == "70c0cd8b-a942-4b8f-b421-b2b5218e23b6"
+                if let mbid = params["mbid"]
                 {
-                    filename = "artist.getinfo-70c0cd8b-a942-4b8f-b421-b2b5218e23b6.json"
+                    if mbid == "70c0cd8b-a942-4b8f-b421-b2b5218e23b6"
+                    {
+                        filename = "artist.getinfo-70c0cd8b-a942-4b8f-b421-b2b5218e23b6.json"
+                    }
+                }
+            
+                if let artistName = params["artist"]
+                {
+                    if artistName == "Cher"
+                    {
+                        filename = "artist.getinfo-Cher.json"
+                    }
                 }
             }
             

@@ -163,4 +163,31 @@ class LFMAPIClient: NSObject {
             
         }
     }
+    
+    class func getInfoForArtist(artist: Artist!, callback: (artist: Artist?, error: NSError?) -> Void)
+    {
+        var params = [String : String]()
+        
+        if let mbid = artist.mbid
+        {
+            params["mbid"] = mbid
+        }
+        else if let name = artist.name
+        {
+            params["artist"] = name
+        }
+        
+        LFMAPIClient.sharedClient.getMethod("artist.getinfo", parameters: params, page: 0) { (result, error, haveNext) -> Void in
+            
+            if let wrappedResult = result as NSDictionary?
+            {
+                if let artistResult = wrappedResult["artist"] as NSDictionary?
+                {
+                    artist.fillWithDictionary(artistResult)
+                }
+            }
+            
+            callback(artist: artist, error: error)
+        }
+    }
 }
