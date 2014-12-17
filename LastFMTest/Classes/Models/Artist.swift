@@ -137,16 +137,6 @@ class Artist: NSObject {
     {
         if let images = self.images?
         {
-            if let url = images["small"]?
-            {
-                return url
-            }
-            
-            if let url = images["medium"]?
-            {
-                return url
-            }
-            
             if let url = images["large"]?
             {
                 return url
