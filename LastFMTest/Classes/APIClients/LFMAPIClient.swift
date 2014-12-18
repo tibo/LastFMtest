@@ -102,9 +102,9 @@ class LFMAPIClient: NSObject {
                         }
                         
                         callback(result: result, error: error, haveNext: haveNext)
+                        return
                     }
                 }
-                
                 
                 callback(result: nil, error: error, haveNext: false)
                 

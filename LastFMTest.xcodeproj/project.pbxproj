@@ -68,6 +68,8 @@
 		11F79DA81A42015500ACE33B /* UIImageView+Haneke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F79D681A42015500ACE33B /* UIImageView+Haneke.swift */; };
 		11F79DA91A42015500ACE33B /* UIView+Haneke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F79D691A42015500ACE33B /* UIView+Haneke.swift */; };
 		11F79DD91A4207C100ACE33B /* ArtistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F79DD81A4207C100ACE33B /* ArtistTableViewCell.swift */; };
+		11F79DE51A42E25600ACE33B /* ArtistHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F79DE41A42E25600ACE33B /* ArtistHeaderTableViewCell.swift */; };
+		11F79DEC1A42E25E00ACE33B /* ArtistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F79DEB1A42E25E00ACE33B /* ArtistTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,6 +187,8 @@
 		11F79D681A42015500ACE33B /* UIImageView+Haneke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Haneke.swift"; sourceTree = "<group>"; };
 		11F79D691A42015500ACE33B /* UIView+Haneke.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Haneke.swift"; sourceTree = "<group>"; };
 		11F79DD81A4207C100ACE33B /* ArtistTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistTableViewCell.swift; sourceTree = "<group>"; };
+		11F79DE41A42E25600ACE33B /* ArtistHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		11F79DEB1A42E25E00ACE33B /* ArtistTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -369,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				11C26AF81A4080E20059A049 /* SearchTableViewController.swift */,
+				11F79DEB1A42E25E00ACE33B /* ArtistTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -451,6 +456,7 @@
 			isa = PBXGroup;
 			children = (
 				11F79DD81A4207C100ACE33B /* ArtistTableViewCell.swift */,
+				11F79DE41A42E25600ACE33B /* ArtistHeaderTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -663,6 +669,8 @@
 				11A4C5121A3C80EA00E9EAB2 /* NSURL+urlBuilder.swift in Sources */,
 				11C26AF91A4080E20059A049 /* SearchTableViewController.swift in Sources */,
 				11F79D9E1A42015500ACE33B /* Fetcher.swift in Sources */,
+				11F79DEC1A42E25E00ACE33B /* ArtistTableViewController.swift in Sources */,
+				11F79DE51A42E25600ACE33B /* ArtistHeaderTableViewCell.swift in Sources */,
 				11F79D9B1A42015500ACE33B /* DiskCache.swift in Sources */,
 				11F79D9A1A42015500ACE33B /* Data.swift in Sources */,
 				11E3AE1E1A41C42400D339F7 /* ArtistBio.swift in Sources */,

@@ -49,9 +49,7 @@ class ArtistBio_Tests: XCTestCase {
             let calendar: NSCalendar! = NSCalendar(calendarIdentifier: NSGregorianCalendar)
             calendar.timeZone = GMT_timeZone
             let dateComponents = calendar.components(NSCalendarUnit(UInt.max), fromDate: date)
-            
-            println("components: \(dateComponents)")
-            
+                        
             XCTAssert(dateComponents.weekday == 7)
             XCTAssert(dateComponents.day == 7)
             XCTAssert(dateComponents.month == 6)

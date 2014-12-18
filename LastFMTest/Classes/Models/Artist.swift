@@ -155,4 +155,37 @@ class Artist: NSObject {
         
         return nil
     }
+    
+    func biggerImageURL() -> NSURL?
+    {
+        if let images = self.images?
+        {
+            if let url = images["mega"]?
+            {
+                return url
+            }
+            
+            if let url = images["extralarge"]?
+            {
+                return url
+            }
+            
+            if let url = images["large"]?
+            {
+                return url
+            }
+            
+            if let url = images["medium"]?
+            {
+                return url
+            }
+            
+            if let url = images["small"]?
+            {
+                return url
+            }
+        }
+        
+        return nil
+    }
 }

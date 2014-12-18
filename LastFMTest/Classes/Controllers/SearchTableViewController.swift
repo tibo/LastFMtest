@@ -41,7 +41,7 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
         
         if let artistName = artist.name?
         {
-            cell.accessibilityLabel = String("artist-" + artistName)
+            cell.accessibilityLabel = String("artist-cell-" + artistName)
             
             if let artistNameLabel = cell.artistNameLabel?
             {
@@ -121,6 +121,18 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
+        if let identifier = segue.identifier?
+        {
+            if identifier == "push_artist"
+            {
+                if let indexPath = self.tableView.indexPathForSelectedRow()
+                {
+                    let artistController = segue.destinationViewController as ArtistTableViewController
+                    
+                    artistController.artist = self.artists[indexPath.row]
+                }
+            }
+        }
     }
 
 }

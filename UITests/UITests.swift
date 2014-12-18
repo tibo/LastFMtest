@@ -31,7 +31,10 @@ class UITests: KIFTestCase {
         tester.enterText("cher", intoViewWithAccessibilityLabel: "artistSearchBar")
         tester.tapViewWithAccessibilityLabel("search")
         tester.waitForAbsenceOfSoftwareKeyboard()
-        tester.waitForViewWithAccessibilityLabel("artist-Cher")
+        tester.waitForViewWithAccessibilityLabel("artist-cell-Cher")
+        tester.tapViewWithAccessibilityLabel("artist-cell-Cher")
+        
+        tester.waitForTimeInterval(5)
     }
 
 }
