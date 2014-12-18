@@ -22,9 +22,9 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>10265E242415D473A6A613214DB7AC3EE3D43F93</key>
-		<string>../..UITests/KIF/</string>
+		<string>../..UITests/KIF</string>
 		<key>C93564C1AFB8B50FF58188F21182F5D0EEAD1C3F</key>
-		<string>../..Externals/Haneke/</string>
+		<string>../..Externals/Haneke</string>
 		<key>FB234625C0CBB88BFAAF5D7BE9ECA68E82593280</key>
 		<string>../..</string>
 	</dict>

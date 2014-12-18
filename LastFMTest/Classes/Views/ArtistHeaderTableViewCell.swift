@@ -17,76 +17,82 @@ class ArtistHeaderTableViewCell: UITableViewCell {
     @IBOutlet var listenersLabel: UILabel?
     @IBOutlet var playCountLegendLabel: UILabel?
     @IBOutlet var playCountLabel: UILabel?
+    @IBOutlet var onTourLabel: UILabel?
     
-    func setArtist(a: Artist!)
+    func setArtist(artist: Artist!)
     {
-        self.artist = a
-        
-        self._refreshContent()
-    }
-    
-    func _refreshContent()
-    {
-        if let artist = self.artist?
+        if let image = artist.biggerImageURL()?
         {
-            if let image = artist.biggerImageURL()?
+            if let imageView = self.artistImageView?
             {
-                if let imageView = self.artistImageView?
-                {
-                    imageView.hnk_setImageFromURL(image)
-                }
+                imageView.hnk_setImageFromURL(image)
+            }
+        }
+        
+        if let listeners = artist.listeners?
+        {
+            if let label = self.listenersLabel?
+            {
+                label.text = "\(listeners)"
+                label.hidden = false
             }
             
-            if let listeners = artist.listeners?
+            if let label = self.listenersLegendLabel?
             {
-                if let label = self.listenersLabel?
-                {
-                    label.text = "\(listeners)"
-                    label.hidden = false
-                }
-                
-                if let label = self.listenersLegendLabel?
-                {
-                    label.hidden = false
-                }
+                label.hidden = false
             }
-            else
+        }
+        else
+        {
+            if let label = self.listenersLegendLabel?
             {
-                if let label = self.listenersLegendLabel?
-                {
-                    label.hidden = true
-                }
-                
-                if let label = self.listenersLabel?
-                {
-                    label.hidden = true
-                }
+                label.hidden = true
             }
             
-            if let playCount = artist.playcount?
+            if let label = self.listenersLabel?
             {
-                if let label = self.playCountLabel?
-                {
-                    label.text = "\(playCount)"
-                    label.hidden = false
-                }
-                
-                if let label = self.playCountLegendLabel?
-                {
-                    label.hidden = false
-                }
+                label.hidden = true
             }
-            else
+        }
+        
+        if let playCount = artist.playcount?
+        {
+            if let label = self.playCountLabel?
             {
-                if let label = self.playCountLegendLabel?
-                {
-                    label.hidden = true
-                }
-                
-                if let label = self.playCountLabel?
-                {
-                    label.hidden = true
-                }
+                label.text = "\(playCount)"
+                label.hidden = false
+            }
+            
+            if let label = self.playCountLegendLabel?
+            {
+                label.hidden = false
+            }
+        }
+        else
+        {
+            if let label = self.playCountLegendLabel?
+            {
+                label.hidden = true
+            }
+            
+            if let label = self.playCountLabel?
+            {
+                label.hidden = true
+            }
+        }
+        
+        if artist.onTour
+        {
+            if let label = self.onTourLabel
+            {
+                label.hidden = false
+            }
+        }
+        else
+        {
+            if let label = self.onTourLabel
+            {
+                label.hidden = true
             }
         }
     }

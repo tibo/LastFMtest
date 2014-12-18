@@ -70,6 +70,7 @@
 		11F79DD91A4207C100ACE33B /* ArtistTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F79DD81A4207C100ACE33B /* ArtistTableViewCell.swift */; };
 		11F79DE51A42E25600ACE33B /* ArtistHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F79DE41A42E25600ACE33B /* ArtistHeaderTableViewCell.swift */; };
 		11F79DEC1A42E25E00ACE33B /* ArtistTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F79DEB1A42E25E00ACE33B /* ArtistTableViewController.swift */; };
+		11F79E211A42EAAE00ACE33B /* ArtistBioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F79E201A42EAAE00ACE33B /* ArtistBioTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +190,7 @@
 		11F79DD81A4207C100ACE33B /* ArtistTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistTableViewCell.swift; sourceTree = "<group>"; };
 		11F79DE41A42E25600ACE33B /* ArtistHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		11F79DEB1A42E25E00ACE33B /* ArtistTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistTableViewController.swift; sourceTree = "<group>"; };
+		11F79E201A42EAAE00ACE33B /* ArtistBioTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistBioTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -457,6 +459,7 @@
 			children = (
 				11F79DD81A4207C100ACE33B /* ArtistTableViewCell.swift */,
 				11F79DE41A42E25600ACE33B /* ArtistHeaderTableViewCell.swift */,
+				11F79E201A42EAAE00ACE33B /* ArtistBioTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -657,6 +660,7 @@
 				11F79D9D1A42015500ACE33B /* Fetch.swift in Sources */,
 				11E3AE1B1A41C3F800D339F7 /* Tag.swift in Sources */,
 				11F79DD91A4207C100ACE33B /* ArtistTableViewCell.swift in Sources */,
+				11F79E211A42EAAE00ACE33B /* ArtistBioTableViewCell.swift in Sources */,
 				11F79D971A42015500ACE33B /* Cache.swift in Sources */,
 				11E3AE251A41DE8E00D339F7 /* NSDate+apiDate.swift in Sources */,
 				11F79DA31A42015500ACE33B /* NSFileManager+Haneke.swift in Sources */,

@@ -23,24 +23,78 @@ class ArtistTableViewController: UITableViewController {
             }
             
             LFMAPIClient.getInfoForArtist(a, callback: { (artist, error) -> Void in
+                self.tableView.reloadData()
             })
         }
     }
 
+    // MARK: - Table view delegate
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if let artist = self.artist?
+        {
+            if indexPath.row == 0 // header
+            {
+                return 150
+            }
+            
+            if indexPath.row == 1 // bio
+            {
+                if let bio = artist.bio
+                {
+                    if let content = bio.content
+                    {
+                        return ArtistBioTableViewCell.heightForBio(content)
+                    }
+                }
+            }
+        }
+        return 0
+    }
+    
     // MARK: - Table view data source
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if let artist = self.artist?
+        {
+            return 2
+        }
+        
+        return 0
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        var cellIdentifier = "artistHeaderCell"
+        var cellIdentifier = ""
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as ArtistHeaderTableViewCell
+        if indexPath.row == 0
+        {
+            cellIdentifier = "artistHeaderCell"
+        }
+        else if indexPath.row == 1
+        {
+            cellIdentifier = "artistBioCell"
+        }
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as UITableViewCell
 
         if let artist = self.artist?
         {
-            cell.setArtist(artist)
+            if let c = cell as? ArtistHeaderTableViewCell
+            {
+                c.setArtist(artist)
+            }
+            else if let c = cell as? ArtistBioTableViewCell
+            {
+                if let label = c.bioLabel?
+                {
+                    if let bio = artist.bio?
+                    {
+                        if let bioContent = bio.content?
+                        {
+                            label.text = bioContent
+                        }
+                    }
+                }
+            }
         }
 
         return cell

@@ -34,7 +34,7 @@ class UITests: KIFTestCase {
         tester.waitForViewWithAccessibilityLabel("artist-cell-Cher")
         tester.tapViewWithAccessibilityLabel("artist-cell-Cher")
         
-        tester.waitForTimeInterval(5)
+        tester.waitForTimeInterval(10)
     }
 
 }
