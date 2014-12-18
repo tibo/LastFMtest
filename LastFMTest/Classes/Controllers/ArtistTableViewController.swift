@@ -39,9 +39,9 @@ class ArtistTableViewController: UITableViewController {
             
             if indexPath.row == 1 // bio
             {
-                if let bio = artist.bio
+                if let bio = artist.bio?
                 {
-                    if let content = bio.content
+                    if let content = bio.content?
                     {
                         return ArtistBioTableViewCell.heightForBio(content)
                     }
@@ -84,14 +84,11 @@ class ArtistTableViewController: UITableViewController {
             }
             else if let c = cell as? ArtistBioTableViewCell
             {
-                if let label = c.bioLabel?
+               if let bio = artist.bio?
                 {
-                    if let bio = artist.bio?
+                    if let bioContent = bio.content?
                     {
-                        if let bioContent = bio.content?
-                        {
-                            label.text = bioContent
-                        }
+                        c.setBio(bioContent)
                     }
                 }
             }
