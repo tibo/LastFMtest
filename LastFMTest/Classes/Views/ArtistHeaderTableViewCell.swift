@@ -25,6 +25,7 @@ class ArtistHeaderTableViewCell: UITableViewCell {
         {
             if let imageView = self.artistImageView?
             {
+                imageView.clipsToBounds = true
                 imageView.hnk_setImageFromURL(image)
             }
         }
@@ -85,6 +86,8 @@ class ArtistHeaderTableViewCell: UITableViewCell {
         {
             if let label = self.onTourLabel
             {
+                label.layer.masksToBounds = true
+                label.layer.cornerRadius = 3.0
                 label.hidden = false
             }
         }
