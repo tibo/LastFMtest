@@ -37,10 +37,33 @@ class ArtistTableViewCell: UITableViewCell {
         }
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func setArtist(artist: Artist!)
+    {
+        if let artistName = artist.name?
+        {
+            self.accessibilityLabel = String("artist-cell-" + artistName)
+            
+            if let artistNameLabel = self.artistNameLabel?
+            {
+                artistNameLabel.text = artistName
+            }
+        }
+        
+        if let imageURL = artist.thumbnailImageURL()?
+        {
+            if let artistImageView = self.artistImageView?
+            {
+                artistImageView.sd_setImageWithURL(imageURL)
+            }
+        }
+        
+        if let listeners = artist.listeners?
+        {
+            if let listenersLabel = self.listenersLabel?
+            {
+                listenersLabel.text = "\(listeners) Listeners"
+            }
+        }
     }
 
 }

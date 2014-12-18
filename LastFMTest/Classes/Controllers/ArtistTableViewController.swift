@@ -15,6 +15,7 @@ class ArtistTableViewController: UITableViewController {
     let headerIndex = 0
     let tagsIndex = 1
     let bioIndex = 2
+    let similarFirstIndex = 3
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,14 +61,21 @@ class ArtistTableViewController: UITableViewController {
                 }
             }
         }
-        return 0
+        return 80
     }
     
     // MARK: - Table view data source
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let artist = self.artist?
         {
-            return 3
+            var rownNum = 3
+            
+            if let similars = artist.similars?
+            {
+                rownNum += similars.count
+            }
+            
+            return rownNum
         }
         
         return 0
@@ -91,8 +99,21 @@ class ArtistTableViewController: UITableViewController {
         }
         else
         {
-            // just to prevent crashes. should not happens
-            return UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "errorCell")
+            if let artist = self.artist?
+            {
+                if let similars = artist.similars?
+                {
+                    if indexPath.row >= similarFirstIndex && indexPath.row < (similarFirstIndex + similars.count)
+                    {
+                        cellIdentifier = "artistResultCell"
+                    }
+                }
+            }
+            else
+            {
+                // just to prevent crashes. should not happens
+                return UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "errorCell")
+            }
         }
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as UITableViewCell
@@ -120,6 +141,15 @@ class ArtistTableViewController: UITableViewController {
                     }
                 }
             }
+            else if let c = cell as? ArtistTableViewCell
+            {
+                if let similars = artist.similars?
+                {
+                    let similarArtist = similars[indexPath.row - similarFirstIndex]
+                    
+                    c.setArtist(similarArtist)
+                }
+            }
         }
 
         return cell
@@ -127,6 +157,28 @@ class ArtistTableViewController: UITableViewController {
 
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if let identifier = segue.identifier?
+        {
+            if identifier == "push_similar"
+            {
+                if let indexPath = self.tableView.indexPathForSelectedRow()?
+                {
+                    if let artist = self.artist?
+                    {
+                        if let similars = artist.similars?
+                        {
+                            let artistController = segue.destinationViewController as ArtistTableViewController
+                            
+                            artistController.artist = similars[indexPath.row - similarFirstIndex]
+                        }
+                    }
+                    
+                    
+                    
+                }
+            }
+        }
 
     }
 

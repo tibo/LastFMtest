@@ -39,31 +39,7 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
 
         let artist = self.artists[indexPath.row]
         
-        if let artistName = artist.name?
-        {
-            cell.accessibilityLabel = String("artist-cell-" + artistName)
-            
-            if let artistNameLabel = cell.artistNameLabel?
-            {
-                artistNameLabel.text = artistName
-            }
-        }
-        
-        if let imageURL = artist.thumbnailImageURL()?
-        {
-            if let artistImageView = cell.artistImageView?
-            {
-                artistImageView.sd_setImageWithURL(imageURL)
-            }
-        }
-        
-        if let listeners = artist.listeners?
-        {
-            if let listenersLabel = cell.listenersLabel?
-            {
-                listenersLabel.text = "\(listeners) Listeners"
-            }
-        }
+        cell.setArtist(artist)
 
         return cell
     }
@@ -125,7 +101,7 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
         {
             if identifier == "push_artist"
             {
-                if let indexPath = self.tableView.indexPathForSelectedRow()
+                if let indexPath = self.tableView.indexPathForSelectedRow()?
                 {
                     let artistController = segue.destinationViewController as ArtistTableViewController
                     
