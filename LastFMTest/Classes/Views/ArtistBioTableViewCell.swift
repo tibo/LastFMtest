@@ -12,12 +12,19 @@ class ArtistBioTableViewCell: UITableViewCell, UIWebViewDelegate {
     
     @IBOutlet var bioWebView: UIWebView?
     
-    class func heightForCellWithBio(bio: String) -> CGFloat
+    class func heightForCellWithBio(bio: String, constrainedToWidth: CGFloat) -> CGFloat
     {
+        if countElements(bio) == 0
+        {
+            return 0
+        }
 //        =>  Prototype on webview doesn't work
 //        
-//        var prototyCell = ArtistBioTableViewCell()
-//        if let webView = prototyCell.bioWebView?
+//        var prototypeCell = ArtistBioTableViewCell()
+//        var frame = prototypeCell.frame
+//        frame.size.width = constrainedToWidth
+//        prototypeCell.frame = frame
+//        if let webView = prototypeCell.bioWebView?
 //        {
 //            webView.loadHTMLString(bio, baseURL: nil)
 //            
@@ -27,17 +34,17 @@ class ArtistBioTableViewCell: UITableViewCell, UIWebViewDelegate {
 //            }
 //            
 //        }
-//        
+//
 //        => Use size calculated from String instead
         
-        var prototypeCell = ArtistBioTableViewCell()
-        
-        let maxSize = CGSizeMake(prototypeCell.frame.size.width - 20, 150)
+        let maxSize = CGSizeMake(constrainedToWidth - 20, 150)
         let attributes = [NSFontAttributeName: UIFont.systemFontOfSize(13.0)]
         
         let size = bio.boundingRectWithSize(maxSize, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: attributes, context: nil).size
         
         return size.height
+        
+        
     }
     
     func setBio(bio: String)

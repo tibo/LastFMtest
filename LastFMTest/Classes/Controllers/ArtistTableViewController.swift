@@ -55,7 +55,7 @@ class ArtistTableViewController: UITableViewController {
                 {
                     if let content = bio.content?
                     {
-                        return ArtistBioTableViewCell.heightForCellWithBio(content)
+                        return ArtistBioTableViewCell.heightForCellWithBio(content, constrainedToWidth: self.tableView.frame.width)
                     }
                 }
             }
