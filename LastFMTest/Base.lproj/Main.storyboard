@@ -74,6 +74,7 @@
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="u8X-fQ-k3m" id="m4H-Zf-tNC"/>
+                            <outlet property="delegate" destination="u8X-fQ-k3m" id="9ph-O1-5se"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="7nQ-SL-CQj"/>

@@ -28,7 +28,7 @@
 		<key>C93564C1AFB8B50FF58188F21182F5D0EEAD1C3F</key>
 		<string>../..Externals/Haneke</string>
 		<key>E28E36D423EC87798E52E2BF482E9F7A1E6479D6</key>
-		<string>../../Externals/SDWebImage/</string>
+		<string>../../Externals/SDWebImage</string>
 		<key>FB234625C0CBB88BFAAF5D7BE9ECA68E82593280</key>
 		<string>../..</string>
 	</dict>
