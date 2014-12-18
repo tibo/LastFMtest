@@ -26,7 +26,7 @@ class ArtistTagTableViewCell: UITableViewCell {
         for v in prototype.contentView.subviews as [UIView]
         {
             if v is TagLabel
-            {                
+            {
                 if maxY < (v.frame.origin.y + v.frame.size.height)
                 {
                     maxY = (v.frame.origin.y + v.frame.size.height)
