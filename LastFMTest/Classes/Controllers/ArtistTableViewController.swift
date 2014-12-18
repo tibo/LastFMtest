@@ -11,6 +11,10 @@ import UIKit
 class ArtistTableViewController: UITableViewController {
     
     var artist: Artist?
+    
+    let headerIndex = 0
+    let tagsIndex = 1
+    let bioIndex = 2
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,18 +36,26 @@ class ArtistTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if let artist = self.artist?
         {
-            if indexPath.row == 0 // header
+            if indexPath.row == headerIndex
             {
                 return 150
             }
             
-            if indexPath.row == 1 // bio
+            if indexPath.row == tagsIndex
+            {
+                if let tags = artist.tags?
+                {
+                    return ArtistTagTableViewCell.heightForCellWithTags(tags, constrainedToWidth: self.tableView.frame.width)
+                }
+            }
+            
+            if indexPath.row == bioIndex
             {
                 if let bio = artist.bio?
                 {
                     if let content = bio.content?
                     {
-                        return ArtistBioTableViewCell.heightForBio(content)
+                        return ArtistBioTableViewCell.heightForCellWithBio(content)
                     }
                 }
             }
@@ -55,7 +67,7 @@ class ArtistTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let artist = self.artist?
         {
-            return 2
+            return 3
         }
         
         return 0
@@ -65,13 +77,22 @@ class ArtistTableViewController: UITableViewController {
         
         var cellIdentifier = ""
         
-        if indexPath.row == 0
+        if indexPath.row == headerIndex
         {
             cellIdentifier = "artistHeaderCell"
         }
-        else if indexPath.row == 1
+        else if indexPath.row == tagsIndex
+        {
+            cellIdentifier = "tagsCell"
+        }
+        else if indexPath.row == bioIndex
         {
             cellIdentifier = "artistBioCell"
+        }
+        else
+        {
+            // just to prevent crashes. should not happens
+            return UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "errorCell")
         }
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as UITableViewCell
@@ -81,6 +102,13 @@ class ArtistTableViewController: UITableViewController {
             if let c = cell as? ArtistHeaderTableViewCell
             {
                 c.setArtist(artist)
+            }
+            else if let c = cell as? ArtistTagTableViewCell
+            {
+                if let tags = artist.tags?
+                {
+                    c.setTags(tags)
+                }
             }
             else if let c = cell as? ArtistBioTableViewCell
             {

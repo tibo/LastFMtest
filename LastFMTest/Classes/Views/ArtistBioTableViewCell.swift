@@ -12,7 +12,7 @@ class ArtistBioTableViewCell: UITableViewCell, UIWebViewDelegate {
     
     @IBOutlet var bioWebView: UIWebView?
     
-    class func heightForBio(bio: String) -> CGFloat
+    class func heightForCellWithBio(bio: String) -> CGFloat
     {
 //        =>  Prototype on webview doesn't work
 //        

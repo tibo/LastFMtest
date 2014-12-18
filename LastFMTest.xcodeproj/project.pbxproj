@@ -23,6 +23,8 @@
 		112AB0DE1A3F02A300F0C362 /* artist.search-Salut-page5.json in Resources */ = {isa = PBXBuildFile; fileRef = 112AB0D81A3F029E00F0C362 /* artist.search-Salut-page5.json */; };
 		112AB0E01A3F032600F0C362 /* artist.getinfo-70c0cd8b-a942-4b8f-b421-b2b5218e23b6.json in Resources */ = {isa = PBXBuildFile; fileRef = 112AB0DF1A3F032600F0C362 /* artist.getinfo-70c0cd8b-a942-4b8f-b421-b2b5218e23b6.json */; };
 		112AB0E11A3F032E00F0C362 /* artist.getinfo-70c0cd8b-a942-4b8f-b421-b2b5218e23b6.json in Resources */ = {isa = PBXBuildFile; fileRef = 112AB0DF1A3F032600F0C362 /* artist.getinfo-70c0cd8b-a942-4b8f-b421-b2b5218e23b6.json */; };
+		11523DF61A430A8200A57F8B /* ArtistTagTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11523DF51A430A8200A57F8B /* ArtistTagTableViewCell.swift */; };
+		11523DFD1A431D3B00A57F8B /* TagLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11523DFC1A431D3B00A57F8B /* TagLabel.swift */; };
 		11A4C4D41A3C666100E9EAB2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A4C4D31A3C666100E9EAB2 /* AppDelegate.swift */; };
 		11A4C4D91A3C666100E9EAB2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A4C4D71A3C666100E9EAB2 /* Main.storyboard */; };
 		11A4C4DB1A3C666100E9EAB2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A4C4DA1A3C666100E9EAB2 /* Images.xcassets */; };
@@ -141,6 +143,8 @@
 		112AB0D31A3F01EC00F0C362 /* artist.search-Salut-page4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "artist.search-Salut-page4.json"; sourceTree = "<group>"; };
 		112AB0D81A3F029E00F0C362 /* artist.search-Salut-page5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "artist.search-Salut-page5.json"; sourceTree = "<group>"; };
 		112AB0DF1A3F032600F0C362 /* artist.getinfo-70c0cd8b-a942-4b8f-b421-b2b5218e23b6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "artist.getinfo-70c0cd8b-a942-4b8f-b421-b2b5218e23b6.json"; sourceTree = "<group>"; };
+		11523DF51A430A8200A57F8B /* ArtistTagTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistTagTableViewCell.swift; sourceTree = "<group>"; };
+		11523DFC1A431D3B00A57F8B /* TagLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagLabel.swift; sourceTree = "<group>"; };
 		11A4C4CE1A3C666100E9EAB2 /* LastFMTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LastFMTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11A4C4D21A3C666100E9EAB2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11A4C4D31A3C666100E9EAB2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -460,6 +464,8 @@
 				11F79DD81A4207C100ACE33B /* ArtistTableViewCell.swift */,
 				11F79DE41A42E25600ACE33B /* ArtistHeaderTableViewCell.swift */,
 				11F79E201A42EAAE00ACE33B /* ArtistBioTableViewCell.swift */,
+				11523DF51A430A8200A57F8B /* ArtistTagTableViewCell.swift */,
+				11523DFC1A431D3B00A57F8B /* TagLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -660,6 +666,7 @@
 				11F79D9D1A42015500ACE33B /* Fetch.swift in Sources */,
 				11E3AE1B1A41C3F800D339F7 /* Tag.swift in Sources */,
 				11F79DD91A4207C100ACE33B /* ArtistTableViewCell.swift in Sources */,
+				11523DFD1A431D3B00A57F8B /* TagLabel.swift in Sources */,
 				11F79E211A42EAAE00ACE33B /* ArtistBioTableViewCell.swift in Sources */,
 				11F79D971A42015500ACE33B /* Cache.swift in Sources */,
 				11E3AE251A41DE8E00D339F7 /* NSDate+apiDate.swift in Sources */,
@@ -678,6 +685,7 @@
 				11F79D9B1A42015500ACE33B /* DiskCache.swift in Sources */,
 				11F79D9A1A42015500ACE33B /* Data.swift in Sources */,
 				11E3AE1E1A41C42400D339F7 /* ArtistBio.swift in Sources */,
+				11523DF61A430A8200A57F8B /* ArtistTagTableViewCell.swift in Sources */,
 				11F79DA01A42015500ACE33B /* Haneke.swift in Sources */,
 				11F79DA91A42015500ACE33B /* UIView+Haneke.swift in Sources */,
 				11F79D9F1A42015500ACE33B /* Format.swift in Sources */,
