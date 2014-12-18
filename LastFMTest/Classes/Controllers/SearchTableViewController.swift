@@ -53,7 +53,7 @@ class SearchTableViewController: UITableViewController, UISearchBarDelegate {
         {
             if let artistImageView = cell.artistImageView?
             {
-                artistImageView.hnk_setImageFromURL(imageURL)
+                artistImageView.sd_setImageWithURL(imageURL)
             }
         }
         

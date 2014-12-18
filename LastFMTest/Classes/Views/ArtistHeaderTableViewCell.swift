@@ -26,7 +26,7 @@ class ArtistHeaderTableViewCell: UITableViewCell {
             if let imageView = self.artistImageView?
             {
                 imageView.clipsToBounds = true
-                imageView.hnk_setImageFromURL(image)
+                imageView.sd_setImageWithURL(image)
             }
         }
         

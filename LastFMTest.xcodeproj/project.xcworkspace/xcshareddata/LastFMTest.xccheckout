@@ -14,6 +14,8 @@
 		<string>https://github.com/kif-framework/KIF.git</string>
 		<key>C93564C1AFB8B50FF58188F21182F5D0EEAD1C3F</key>
 		<string>github.com:Haneke/HanekeSwift.git</string>
+		<key>E28E36D423EC87798E52E2BF482E9F7A1E6479D6</key>
+		<string>github.com:rs/SDWebImage.git</string>
 		<key>FB234625C0CBB88BFAAF5D7BE9ECA68E82593280</key>
 		<string>github.com:tibo/LastFMtest.git</string>
 	</dict>
@@ -25,6 +27,8 @@
 		<string>../..UITests/KIF</string>
 		<key>C93564C1AFB8B50FF58188F21182F5D0EEAD1C3F</key>
 		<string>../..Externals/Haneke</string>
+		<key>E28E36D423EC87798E52E2BF482E9F7A1E6479D6</key>
+		<string>../../Externals/SDWebImage/</string>
 		<key>FB234625C0CBB88BFAAF5D7BE9ECA68E82593280</key>
 		<string>../..</string>
 	</dict>
@@ -59,6 +63,14 @@
 			<string>FB234625C0CBB88BFAAF5D7BE9ECA68E82593280</string>
 			<key>IDESourceControlWCCName</key>
 			<string>LastFMTest</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E28E36D423EC87798E52E2BF482E9F7A1E6479D6</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SDWebImage</string>
 		</dict>
 	</array>
 </dict>
