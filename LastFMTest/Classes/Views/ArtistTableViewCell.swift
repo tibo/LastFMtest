@@ -53,6 +53,7 @@ class ArtistTableViewCell: UITableViewCell {
         {
             if let artistImageView = self.artistImageView?
             {
+                artistImageView.clipsToBounds = true
                 artistImageView.sd_setImageWithURL(imageURL)
             }
         }
