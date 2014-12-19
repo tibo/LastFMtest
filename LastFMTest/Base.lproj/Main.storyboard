@@ -194,23 +194,22 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="drU-DZ-cP6" id="Udn-fi-P5s">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QlN-61-7h6">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="13x-q2-sJx">
                                             <rect key="frame" x="10" y="10" width="580" height="130"/>
-                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <connections>
-                                                <outlet property="delegate" destination="drU-DZ-cP6" id="A0j-5e-jPh"/>
-                                            </connections>
-                                        </webView>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="QlN-61-7h6" secondAttribute="trailing" constant="10" id="5Xc-eY-G6I"/>
-                                        <constraint firstAttribute="bottom" secondItem="QlN-61-7h6" secondAttribute="bottom" constant="10" id="Wx3-Pl-83Z"/>
-                                        <constraint firstItem="QlN-61-7h6" firstAttribute="leading" secondItem="Udn-fi-P5s" secondAttribute="leading" constant="10" id="egl-qB-mhX"/>
-                                        <constraint firstItem="QlN-61-7h6" firstAttribute="top" secondItem="Udn-fi-P5s" secondAttribute="top" constant="10" id="wiG-VV-PCn"/>
+                                        <constraint firstItem="13x-q2-sJx" firstAttribute="leading" secondItem="Udn-fi-P5s" secondAttribute="leading" constant="10" id="Ztq-4z-tIq"/>
+                                        <constraint firstAttribute="bottom" secondItem="13x-q2-sJx" secondAttribute="bottom" constant="10" id="bbt-Qa-SpH"/>
+                                        <constraint firstItem="13x-q2-sJx" firstAttribute="top" secondItem="Udn-fi-P5s" secondAttribute="top" constant="10" id="iXT-Lh-JJZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="13x-q2-sJx" secondAttribute="trailing" constant="10" id="yVs-RP-GoV"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="bioWebView" destination="QlN-61-7h6" id="nYT-QX-5uJ"/>
+                                    <outlet property="bioLabel" destination="13x-q2-sJx" id="PTh-Um-M0o"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="artistResultCell" id="j7D-6b-r1N" customClass="ArtistTableViewCell" customModule="LastFMTest" customModuleProvider="target">

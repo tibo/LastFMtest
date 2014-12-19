@@ -6,11 +6,20 @@
 //  Copyright (c) 2014 Thibaut LE LEVIER. All rights reserved.
 //
 
-import UIKit
-
-class ArtistBioTableViewCell: UITableViewCell, UIWebViewDelegate {
+class ArtistBioTableViewCell: UITableViewCell {
     
-    @IBOutlet var bioWebView: UIWebView?
+    @IBOutlet var bioLabel: UILabel?
+    
+    override func awakeFromNib() {
+        if let label = self.bioLabel?
+        {
+            label.text = nil
+            
+            label.numberOfLines = 0
+            label.lineBreakMode = NSLineBreakMode.ByWordWrapping
+            label.adjustsFontSizeToFitWidth = true
+        }
+    }
     
     class func heightForCellWithBio(bio: String, constrainedToWidth: CGFloat) -> CGFloat
     {
@@ -18,41 +27,31 @@ class ArtistBioTableViewCell: UITableViewCell, UIWebViewDelegate {
         {
             return 0
         }
-//        =>  Prototype on webview doesn't work
-//        
-//        var prototypeCell = ArtistBioTableViewCell()
-//        var frame = prototypeCell.frame
-//        frame.size.width = constrainedToWidth
-//        prototypeCell.frame = frame
-//        if let webView = prototypeCell.bioWebView?
-//        {
-//            webView.loadHTMLString(bio, baseURL: nil)
-//            
-//            if let height = webView.stringByEvaluatingJavaScriptFromString("document.body.offsetHeight")?
-//            {
-//                return CGFloat((height as NSString).floatValue)
-//            }
-//            
-//        }
-//
-//        => Use size calculated from String instead
         
-        let maxSize = CGSizeMake(constrainedToWidth - 20, 150)
-        let attributes = [NSFontAttributeName: UIFont.systemFontOfSize(13.0)]
+        let maxSize = CGSizeMake(constrainedToWidth - 20, CGFloat.max)
         
-        let size = bio.boundingRectWithSize(maxSize, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: attributes, context: nil).size
+        // may not work well... because Swift: http://stackoverflow.com/questions/24064650/how-to-pass-multiple-enum-values-as-a-function-parameter
+        let size = bio.boundingRectWithSize(maxSize, options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType], context: nil).size
         
         return size.height
-        
-        
     }
     
     func setBio(bio: String)
     {
-        if let webview = self.bioWebView?
+        if let label = self.bioLabel?
         {
-            webview.scrollView.scrollEnabled = false
-            webview.loadHTMLString(bio, baseURL: nil)
+            if let htmlData = bio.dataUsingEncoding(NSUTF8StringEncoding)?
+            {
+                var attributes = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType, NSFontAttributeName: UIFont.systemFontOfSize(15)]
+                
+                var error: NSError?
+                label.attributedText = NSAttributedString(data: htmlData,
+                    options: attributes,
+                    documentAttributes: nil,
+                    error: &error)
+            }
+            
+            
         }
     }
     
