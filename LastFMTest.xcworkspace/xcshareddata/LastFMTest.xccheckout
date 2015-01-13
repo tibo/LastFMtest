@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C3A5B8B5-8D3A-49E2-BF49-0BB825F2DF48</string>
+	<key>IDESourceControlProjectName</key>
+	<string>LastFMTest</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>FB234625C0CBB88BFAAF5D7BE9ECA68E82593280</key>
+		<string>github.com:tibo/LastFMtest.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>LastFMTest.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>FB234625C0CBB88BFAAF5D7BE9ECA68E82593280</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:tibo/LastFMtest.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>FB234625C0CBB88BFAAF5D7BE9ECA68E82593280</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>FB234625C0CBB88BFAAF5D7BE9ECA68E82593280</string>
+			<key>IDESourceControlWCCName</key>
+			<string>LastFMtest</string>
+		</dict>
+	</array>
+</dict>
+</plist>
