@@ -1,0 +1,17 @@
+PODS:
+  - KIF (3.1.1):
+    - KIF/XCTest (= 3.1.1)
+  - KIF/XCTest (3.1.1)
+  - SDWebImage (3.7.1):
+    - SDWebImage/Core (= 3.7.1)
+  - SDWebImage/Core (3.7.1)
+
+DEPENDENCIES:
+  - KIF (~> 3.0)
+  - SDWebImage (~> 3.7)
+
+SPEC CHECKSUMS:
+  KIF: 0a3c7440a32612498a114012e822b9d39b6432f1
+  SDWebImage: 116e88633b5b416ea0ca4b334a4ac59cf72dd38d
+
+COCOAPODS: 0.35.0
