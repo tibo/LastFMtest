@@ -21,20 +21,20 @@ class NSURL_urlBuilder_Tests: XCTestCase {
         super.tearDown()
     }
 
-    func test_URLWithBaseURL_withValidURLMethodAndParams_shouldReturnValidURL() {
-
-        var params = ["artist" : "Salut", "api_key" : "57b5a22d4a903735457999270a03664c", "format" : "json"]
-        
-        let url = NSURL.URLWithBaseURL("http://ws.audioscrobbler.com/2.0/", method: "artist.search", params: params)
-        
-        if let u = url?
-        {
-            XCTAssert(u.absoluteString == "http://ws.audioscrobbler.com/2.0/?method=artist.search&format=json&artist=Salut&api_key=57b5a22d4a903735457999270a03664c")
-        }
-        else
-        {
-            XCTFail("url should be not nil")
-        }
-        
-    }
+//    func test_URLWithBaseURL_withValidURLMethodAndParams_shouldReturnValidURL() {
+//
+//        var params = ["artist" : "Salut", "api_key" : "57b5a22d4a903735457999270a03664c", "format" : "json"]
+//        
+//        let url = NSURL.URLWithBaseURL("http://ws.audioscrobbler.com/2.0/", method: "artist.search", params: params)
+//        
+//        if let u = url?
+//        {
+//            XCTAssert(u.absoluteString == "http://ws.audioscrobbler.com/2.0/?method=artist.search&format=json&artist=Salut&api_key=57b5a22d4a903735457999270a03664c")
+//        }
+//        else
+//        {
+//            XCTFail("url should be not nil")
+//        }
+//        
+//    }
 }
